@@ -15,11 +15,11 @@ def main():
 
     while not guessed_number:
         if not is_valid_num(guess):
-            guess = input ("I won't count that one. A number between 1 and 100 please: ")
-            continue
-        else:
-            thenumberGuesses += 1
-            guess = int(guess)
+            if guess == "Q":
+                break
+            else:
+                guess = input ("I won't count that one. A number between 1 and 100 please: ")
+                continue
 
         if guess < number:
             guess = input ("Too low. Guess again: ")
